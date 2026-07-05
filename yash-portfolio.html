@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Agola | WordPress & Front-End Developer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --electric-blue: #0026ff;
+            --bg-dark: #0a0b0e;
+            --card-dark: #12141c;
+            --border-color: rgba(0, 38, 255, 0.2);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tech-card {
+            background: var(--card-dark);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+        }
+        .tech-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0, 38, 255, 0.25);
+        }
+
+        .btn-electric {
+            background-color: var(--electric-blue);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .btn-electric:hover {
+            box-shadow: 0 0 20px var(--electric-blue);
+            transform: scale(1.03);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--electric-blue); border-radius: 4px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0a0b0e]/80 backdrop-blur-md border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-black tracking-wider text-white">YASH<span class="text-[#0026ff]">.</span></a>
+            <nav class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#skills" class="hover:text-white transition-colors">Proficiency</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Projects</a>
+                <a href="#personal" class="hover:text-white transition-colors">Details</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden bg-[#12141c] px-6 py-4 space-y-3 text-sm font-bold border-b border-gray-800">
+            <a href="#about" class="block text-gray-300">About</a>
+            <a href="#skills" class="block text-gray-300">Proficiency</a>
+            <a href="#experience" class="block text-gray-300">Experience</a>
+            <a href="#portfolio" class="block text-gray-300">Projects</a>
+            <a href="#personal" class="block text-gray-300">Details</a>
+            <a href="#contact" class="block text-gray-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Banner Hero Section -->
+    <section id="about" class="min-h-screen flex items-center pt-24 relative px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 items-center w-full">
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="inline-block px-3 py-1 bg-[#0026ff]/10 border border-[#0026ff]/40 rounded text-[#0026ff] text-xs font-bold uppercase tracking-widest">
+                    WordPress Developer
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight leading-none">
+                    YASH <span class="bg-[#0026ff] text-white px-2 inline-block">AGOLA</span>
+                </h1>
+                <p class="text-gray-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
+                    IT-focused WordPress Developer with 4+ years of experience in full-cycle website development, custom basic theme customization, and performance optimization. Proficient in bridging front-end design with custom basic PHP logic using custom post types and advanced custom fields.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#portfolio" class="btn-electric px-6 py-3 rounded text-xs font-bold uppercase tracking-wider">Explore Deployments</a>
+                    <a href="#contact" class="border border-gray-700 hover:border-[#0026ff] text-white px-6 py-3 rounded text-xs font-bold uppercase tracking-wider transition-colors">Get In Touch</a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-[350px] aspect-square border-2 border-[#0026ff] p-3 group">
+                    <div class="w-full h-full bg-zinc-900 relative overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" alt="Yash Agola Profile Graphic Placeholder" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-[#0026ff]/10 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Progress Bars Section -->
+    <section id="skills" class="py-24 bg-[#0f111a] px-6">
+        <div class="max-w-4xl mx-auto reveal">
+            <div class="mb-12">
+                <span class="text-xs font-bold text-[#0026ff] uppercase tracking-widest block mb-2">Core Frameworks</span>
+                <h2 class="text-3xl font-bold text-white">Language Proficiency</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2 text-gray-300">
+                        <span>HTML5 & CSS3</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="progress-bar h-full bg-[#0026ff]" style="width: 0%;" data-progress="95%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2 text-gray-300">
+                        <span>JavaScript (jQuery)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="progress-bar h-full bg-[#0026ff]" style="width: 0%;" data-progress="85%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2 text-gray-300">
+                        <span>PHP Basic</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="progress-bar h-full bg-[#0026ff]" style="width: 0%;" data-progress="75%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2 text-gray-300">
+                        <span>Bootstrap & Tailwind CSS</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="progress-bar h-full bg-[#0026ff]" style="width: 0%;" data-progress="90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-12 pt-12 border-t border-zinc-800 text-sm text-gray-400">
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-xs text-[#0026ff]">WordPress Core Properties</h4>
+                    <p class="leading-relaxed">Plugin Customization, Custom Post Types (CPT), Advanced Custom Fields (ACF), WP_Query, WooCommerce, Elementor Pro, WPBakery, Impreza Theme, Contact Form 7, Yoast SEO.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-xs text-[#0026ff]">DevOps & Performance</h4>
+                    <p class="leading-relaxed">cPanel/WHM, FileZilla/SFTP, WP Rocket, W3TC, WebP, Smush, Basic SSL/HTTPS Configuration, Adobe Photoshop Fundamentals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-24 px-6 max-w-7xl mx-auto reveal">
+        <div class="mb-16">
+            <span class="text-xs font-bold text-[#0026ff] uppercase tracking-widest block mb-2">Track Record</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Work Experience</h2>
+        </div>
+
+        <div class="space-y-8 max-w-4xl">
+            <div class="tech-card p-8 rounded">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">WordPress Developer + Squarespace</h3>
+                        <p class="text-sm text-[#0026ff] font-medium">Rewa Techno</p>
+                    </div>
+                    <span class="text-xs font-bold text-gray-400 border border-zinc-800 px-3 py-1 rounded bg-[#0a0b0e]">January 2024 – Present</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-400 list-disc list-inside">
+                    <li>Specializing in building and managing dynamic websites using WordPress and Squarespace platforms.</li>
+                    <li>Customizing basic themes, managing plugins, and ensuring optimal website performance and security.</li>
+                    <li>Collaborating with clients to understand requirements and delivering functional, user-friendly websites.</li>
+                    <li>Managing a portfolio of 15+ live client sites; implementing automated backup solutions and security hardening protocols to reduce vulnerability risks by 90%.</li>
+                </ul>
+            </div>
+
+            <div class="tech-card p-8 rounded">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">WordPress Developer</h3>
+                        <p class="text-sm text-[#0026ff] font-medium">DM Websoft LLP</p>
+                    </div>
+                    <span class="text-xs font-bold text-gray-400 border border-zinc-800 px-3 py-1 rounded bg-[#0a0b0e]">June 2022 – January 2024</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-400 list-disc list-inside">
+                    <li>Developed, customized, and maintained numerous websites using the WordPress platform.</li>
+                    <li>Worked extensively with Elementor & Elementor Pro for advanced page building and design.</li>
+                    <li>Integrated WooCommerce to create fully functional, scalable e-commerce websites.</li>
+                    <li>Utilized Impreza Theme and various other premium themes for responsive website design.</li>
+                    <li>Successfully converted PSD to WordPress and Figma to WordPress/HTML with precision.</li>
+                    <li>Implemented Contact Form 7 and other essential plugins to enhance website functionality.</li>
+                </ul>
+            </div>
+
+            <div class="tech-card p-8 rounded">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Web Designer (Training)</h3>
+                        <p class="text-sm text-[#0026ff] font-medium">Vedansh Infoway Pvt. Ltd.</p>
+                    </div>
+                    <span class="text-xs font-bold text-gray-400 border border-zinc-800 px-3 py-1 rounded bg-[#0a0b0e]">Training Phase</span>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-400 list-disc list-inside">
+                    <li>Gained practical knowledge in front-end technologies including HTML, CSS, Bootstrap, JavaScript, and jQuery.</li>
+                    <li>Learned Adobe Photoshop fundamentals for image manipulation and web asset creation.</li>
+                    <li>Understood the core principles of responsive and cross-browser compatible web design.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete 9 Websites Showcase Portfolio Grid -->
+    <section id="portfolio" class="py-24 bg-[#0f111a] px-6">
+        <div class="max-w-7xl mx-auto reveal">
+            <div class="mb-16">
+                <span class="text-xs font-bold text-[#0026ff] uppercase tracking-widest block mb-2">Live Deployments</span>
+                <h2 class="text-3xl font-bold text-white">Websites & Portfolios</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">business-plans.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Business planning resource website environment.</p>
+                    </div>
+                    <a href="https://business-plans.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">nlsbanking.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Digital banking solutions for financial institutions.</p>
+                    </div>
+                    <a href="https://nlsbanking.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">proai.co</h4>
+                        <p class="text-xs text-gray-400 mb-6">AI-focused startup website ecosystem deployment.</p>
+                    </div>
+                    <a href="https://proai.co/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">pinkdogstudio.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Creative brand agency configuration node.</p>
+                    </div>
+                    <a href="https://pinkdogstudio.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">stoneandtilestudio.flywheelsites.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Premium stone & tile showroom digital site layout.</p>
+                    </div>
+                    <a href="https://stoneandtilestudio.flywheelsites.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">reelicon.co.in</h4>
+                        <p class="text-xs text-gray-400 mb-6">Corporate website environment for Reelicon Glass.</p>
+                    </div>
+                    <a href="https://reelicon.co.in/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">jsterlingswintergarden.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Wellness spa business processing layout matrix.</p>
+                    </div>
+                    <a href="https://jsterlingswintergarden.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">newcustomhomes.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Custom home builder premium listing directory structure.</p>
+                    </div>
+                    <a href="https://newcustomhomes.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+                <div class="tech-card p-6 rounded flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-2">campkingston.com</h4>
+                        <p class="text-xs text-gray-400 mb-6">Multi-purpose camp with coffee shop, mercantile & events.</p>
+                    </div>
+                    <a href="https://www.campkingston.com/" target="_blank" class="text-xs font-bold text-[#0026ff] uppercase tracking-wider hover:underline">Explore Space &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Personal Matrix Section -->
+    <section id="personal" class="py-24 px-6 max-w-7xl mx-auto reveal">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <h3 class="text-2xl font-bold text-white border-b border-zinc-800 pb-3">Education Credentials</h3>
+                <div class="space-y-4">
+                    <div class="bg-[#12141c] p-5 rounded border border-zinc-800">
+                        <span class="text-xs font-bold text-[#0026ff]">H.S.C. (Higher Secondary Certificate)</span>
+                        <h4 class="text-base font-bold text-white mt-1">Paramahans Vidya Bhavan School of Science & Commerce</h4>
+                    </div>
+                    <div class="bg-[#12141c] p-5 rounded border border-zinc-800">
+                        <span class="text-xs font-bold text-[#0026ff]">S.S.C. (Secondary School Certificate)</span>
+                        <h4 class="text-base font-bold text-white mt-1">Saraswati Vidhyalay</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="text-2xl font-bold text-white border-b border-zinc-800 pb-3">Personal Parameters</h3>
+                <div class="bg-[#12141c] p-6 rounded border border-zinc-800 grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <span class="block text-xs text-gray-500 uppercase font-bold">Date of Birth</span>
+                        <span class="text-gray-200">10th January 2002</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-500 uppercase font-bold">Languages</span>
+                        <span class="text-gray-200">English, Hindi, Gujarati</span>
+                    </div>
+                    <div class="col-span-2">
+                        <span class="block text-xs text-gray-500 uppercase font-bold">Interests & Hobbies</span>
+                        <span class="text-gray-200">Cricket, Travelling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Terminal Connect -->
+    <footer id="contact" class="py-16 bg-black px-6 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-white">Let's Interface.</h2>
+                <p class="text-sm text-gray-400 max-w-sm">Ahmedabad, Gujarat &bull; +91 8511347633 &bull; yashagola1234@gmail.com</p>
+                <div class="flex space-x-4 pt-2">
+                    <a href="https://www.linkedin.com/in/yashagola/" target="_blank" class="text-xl text-gray-500 hover:text-[#0026ff] transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank" class="text-xl text-gray-500 hover:text-[#0026ff] transition-colors"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <form class="space-y-3" onsubmit="event.preventDefault(); alert('Transmission Successful.');">
+                <input type="text" placeholder="Identity / Organization" class="w-full bg-[#12141c] border border-zinc-800 rounded p-3 text-xs uppercase font-bold tracking-widest text-white focus:outline-none focus:border-[#0026ff]" required>
+                <textarea rows="3" placeholder="Project Parameters Payload" class="w-full bg-[#12141c] border border-zinc-800 rounded p-3 text-xs uppercase font-bold tracking-widest text-white focus:outline-none focus:border-[#0026ff]" required></textarea>
+                <button type="submit" class="w-full btn-electric py-3 rounded text-xs font-bold uppercase tracking-widest">Transmit Signal</button>
+            </form>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-zinc-900 text-center text-[10px] uppercase tracking-widest text-gray-600 font-bold">
+            &copy; 2026 Yash Agola. Optimized Cobalt Monochrome System Environment.
+        </div>
+    </footer>
+
+    <!-- jQuery for Interactions and Scroll Animations -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#menu-toggle').on('click', function() {
+                $('#mobile-menu').slideToggle(200);
+            });
+
+            $('a[href^="#"]').on('click', function(e) {
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    e.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 800);
+                    $('#mobile-menu').slideUp(200);
+                }
+            });
+
+            function checkScrollReveals() {
+                var windowHeight = $(window).height();
+                var scrollTop = $(window).scrollTop();
+
+                $('.reveal').each(function() {
+                    var elementOffset = $(this).offset().top;
+                    if (scrollTop + windowHeight > elementOffset + 50) {
+                        $(this).addClass('active');
+                        
+                        $(this).find('.progress-bar').each(function() {
+                            var targetProgress = $(this).attr('data-progress');
+                            $(this).animate({ width: targetProgress }, 1200);
+                        });
+                    }
+                });
+            }
+
+            $(window).on('scroll', checkScrollReveals);
+            checkScrollReveals();
+        });
+    </script>
+</body>
+</html>
